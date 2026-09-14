@@ -1,0 +1,57 @@
+### Create patient
+POST http://localhost:5000/api/patients
+Content-Type: application/json
+
+{
+  "name": "Siya Carter",
+  "age": 32,
+  "gender": "Female"
+}
+
+### Create medical document
+POST http://localhost:5000/api/medical-documents
+Content-Type: application/json
+
+{
+  "patientId": "6aa59dd148c631fced10708e",
+  "title": "Thyroid Prescription",
+  "documentType": "prescription",
+  "content": "Medications:\nLevothyroxine 50 mcg once daily in the morning.\nThe medication should be taken on an empty stomach."
+}
+
+### Get document chunks
+GET http://localhost:5000/api/medical-documents/chunks/6aa5197e05b76cf490a828fb
+
+### Get all document chunks
+GET http://localhost:5000/api/medical-documents/chunks
+
+### Get patient's medical documents
+GET http://localhost:5000/api/medical-documents/patient/6aa3e00d210d58ee9ae5a243
+
+### Get all medical documents
+GET http://localhost:5000/api/medical-documents
+
+### Search for relevant medical information
+POST http://localhost:5000/api/search
+Content-Type: application/json
+
+{
+  "question": "What medication is the patient taking for blood pressure?",
+  "patientId": "6aa59d6348c631fced10708c",
+  "limit": 5
+}
+
+### Search for relevant chat history
+POST http://localhost:5000/api/chat
+Content-Type: application/json
+
+{
+  "patientId": "6aa59dd148c631fced10708e",
+  "question": "What is my HbA1c?"
+}
+
+### Get chat history
+GET http://localhost:5000/api/chat/6aa5a557c42a0d2d139f7110
+
+### Get chat history for a specific patient
+GET http://localhost:5000/api/chat/patient/6aa59dd148c631fced10708e
