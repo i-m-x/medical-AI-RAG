@@ -19,10 +19,12 @@
   "packageManager": "pnpm@12.3.4",
   "type": "module",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1132.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.9.5",
+    "multer": "^2.4.0",
     "openai": "^7.14.0"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import UploadFile from "./components/fileUpload/uploadFile";
 
 function App() {
 
@@ -143,6 +144,9 @@ function App() {
               </option>
             ))}
           </select>
+        </div>
+        <div>
+          <UploadFile />
         </div>
         <div className="chat-history">
           <h3>Previous Chats</h3>
